@@ -94,7 +94,18 @@ chart = {
   return svg.node();
 }
 
-data = Object {name: "flare", children: Array(10)}
+data = Object {name: "flare", children: Array(10)[
+  0: Object {name: "analytics", children: Array(3)}
+  1: Object {name: "animate", children: Array(12)}
+  2: Object {name: "data", children: Array(7)}
+  3: Object {name: "display", children: Array(4)}
+  4: Object {name: "flex", children: Array(1)}
+  5: Object {name: "physics", children: Array(8)}
+  6: Object {name: "query", children: Array(29)}
+  7: Object {name: "scale", children: Array(10)}
+  8: Object {name: "util", children: Array(19)}
+  9: Object {name: "vis", children: Array(7)}
+]}
 
 data = FileAttachment("flare-2.json").json()
 
