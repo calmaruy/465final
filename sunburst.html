@@ -1,34 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="google-site-verification" content="Cb1i2q7oVgeeYvCfXyzou6YrKo5cPOGleoeIojAGqLM" />
-<meta name="description" content="Zoomable Sunburst This variant of a sunburst diagram shows only two layers of the hierarchy at a time. Click a node to zoom in, or the center to zoom out. Compare to an icicle.">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="Zoomable Sunburst">
-<meta property="og:description" content="An Observable notebook by D3.">
-<meta property="og:image" content="https://static.observableusercontent.com/thumbnail/6d2e1f16d415ac13f13740b6155fdcfb8d3836e5b2332277de1e26742ffbcb0c.jpg"><link rel="canonical" href="https://observablehq.com/@d3/zoomable-sunburst">
-<meta property="article:published_time" content="2018-04-30T17:36:45.704Z">
-<meta property="article:modified_time" content="2019-10-29T22:29:23.969Z">
-<link rel="prefetch" href="https://static.observableusercontent.com/worker/worker.5c99a9081c457c0e801233681358cd9a4959b3dcceab007416d9d74eff0bafcc.js">
-<link rel="prefetch" href="https://d3.static.observableusercontent.com/worker/worker.8c9b9e76cacd7788bef45951d46d997f4f618463bd9d9edfd101a50405b3986a.html">
-<link rel="preload" href="https://api.observablehq.com/document/86ddbc29bd33f9d6@346" crossorigin="use-credentials" as="fetch">
-<title>Zoomable Sunburst / D3 / Observable</title>
-<link rel="stylesheet" type="text/css" href="https://static.observablehq.com/style.80158298a599d6346da897a204269236e84fdebc3b762e688865cdeb040fd677.css">
-<link rel="apple-touch-icon" href="https://static.observablehq.com/favicon-512.e85350a27dfadeea7c7c78c797c24419525df5579de174d86d258c40ae57473a.png">
-<link rel="icon" type="image/png" href="https://static.observablehq.com/favicon-512.e85350a27dfadeea7c7c78c797c24419525df5579de174d86d258c40ae57473a.png" sizes="512x512">
-<link rel="search" type="application/opensearchdescription+xml" href="https://static.observablehq.com/opensearch.2f2ef9951b0f956fdefad21904e009bdc07d195eb7bd756829e83523fd64ea39.xml" title="Observable search">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
-<body class="sans-serif bg-white">
-<div data-anonymous id="app"></div>
-<div class="modal"></div>
-<div class="overlay absolute top-0 left-0"></div>
-<script>window.preloadData={"specifier":"86ddbc29bd33f9d6@346"}</script>
-<script>!function(){const e="undefined"!=typeof self,t="undefined"!=typeof document,n=e?self:global;let r;if(t){const e=document.querySelector("base[href]");e&&(r=e.href)}if(!r&&"undefined"!=typeof location){const e=(r=location.href.split("#")[0].split("?")[0]).lastIndexOf("/");-1!==e&&(r=r.slice(0,e+1))}const o=/\\/g;function i(e,t){if(-1!==e.indexOf("\\")&&(e=e.replace(o,"/")),"/"===e[0]&&"/"===e[1])return t.slice(0,t.indexOf(":")+1)+e;if("."===e[0]&&("/"===e[1]||"."===e[1]&&("/"===e[2]||2===e.length&&(e+="/"))||1===e.length&&(e+="/"))||"/"===e[0]){const n=t.slice(0,t.indexOf(":")+1);let r;if(r="/"===t[n.length+1]?"file:"!==n?(r=t.slice(n.length+2)).slice(r.indexOf("/")+1):t.slice(8):t.slice(n.length+("/"===t[n.length])),"/"===e[0])return t.slice(0,t.length-r.length-1)+e;const o=r.slice(0,r.lastIndexOf("/")+1)+e,i=[];let c=-1;for(let e=0;e<o.length;e++)-1!==c?"/"===o[e]&&(i.push(o.slice(c,e+1)),c=-1):"."===o[e]?"."!==o[e+1]||"/"!==o[e+2]&&e+2!==o.length?"/"===o[e+1]||e+1===o.length?e+=1:c=e:(i.pop(),e+=2):c=e;return-1!==c&&i.push(o.slice(c)),t.slice(0,t.length-r.length)+i.join("")}}const c="undefined"!=typeof Symbol,s=c&&Symbol.toStringTag,l=c?Symbol():"@";function u(){this[l]={}}const f=u.prototype;let d;f.prepareImport=function(){},f.import=function(e,t){const n=this;return Promise.resolve(n.prepareImport()).then(function(){return n.resolve(e,t)}).then(function(e){const t=function e(t,n,r){let o=t[l][n];if(o)return o;const i=[],c=Object.create(null);s&&Object.defineProperty(c,s,{value:"Module"});let u=Promise.resolve().then(function(){return t.instantiate(n,r)}).then(function(e){if(!e)throw Error("Module "+n+" did not instantiate");const r=e[1](function(e,t){o.h=!0;let n=!1;if("object"!=typeof e)e in c&&c[e]===t||(c[e]=t,n=!0);else{for(let t in e){let r=e[t];t in c&&c[t]===r||(c[t]=r,n=!0)}e.__esModule&&(c.__esModule=e.__esModule)}if(n)for(let e=0;e<i.length;e++)i[e](c);return t},2===e[1].length?{import:function(e){return t.import(e,n)},meta:t.createContext(n)}:void 0);return o.e=r.execute||function(){},[e[0],r.setters||[]]});const f=u.then(function(r){return Promise.all(r[0].map(function(o,i){const c=r[1][i];return Promise.resolve(t.resolve(o,n)).then(function(r){const o=e(t,r,n);return Promise.resolve(o.I).then(function(){return c&&(o.i.push(c),!o.h&&o.I||c(o.n)),o})})})).then(function(e){o.d=e})});return f.catch(function(e){o.e=null,o.er=e}),o=t[l][n]={id:n,i:i,n:c,I:u,L:f,h:!1,d:void 0,e:void 0,er:void 0,E:void 0,C:void 0}}(n,e);return t.C||function(e,t){return t.C=function e(t,n,r){if(!r[n.id])return r[n.id]=!0,Promise.resolve(n.L).then(function(){return Promise.all(n.d.map(function(n){return e(t,n,r)}))})}(e,t,{}).then(function(){return function e(t,n,r){if(r[n.id])return;if(r[n.id]=!0,!n.e){if(n.er)throw n.er;return n.E?n.E:void 0}let o;return n.d.forEach(function(n){{const i=e(t,n,r);i&&(o=o||[]).push(i)}}),o?Promise.all(o).then(i):i();function i(){try{let e=n.e.call(a);if(e)return e=e.then(function(){n.C=n.n,n.E=null}),n.E=n.E||e;n.C=n.n}catch(e){throw n.er=e,e}finally{n.L=n.I=void 0,n.e=null}}}(e,t,{})}).then(function(){return t.n})}(n,t)})},f.createContext=function(e){return{url:e}},f.register=function(e,t){d=[e,t]},f.getRegister=function(){const e=d;return d=void 0,e};const a=Object.freeze(Object.create(null));n.System=new u;const h=f.register;let p,m;function g(){Array.prototype.forEach.call(document.querySelectorAll("script[type=systemjs-module]"),function(e){var t,n;e.src&&System.import("import:"===e.src.slice(0,7)?e.src.slice(7):i(t=e.src,n=r)||(-1!==t.indexOf(":")?t:i("./"+t,n)))})}f.register=function(e,t){h.call(this,e,t)},f.createScript=function(e){const t=document.createElement("script");return t.charset="utf-8",t.async=!0,t.crossOrigin="anonymous",t.src=e,t},t&&window.addEventListener("error",function(e){p=e.filename,m=e.error}),f.instantiate=function(e,t){const n=this;return new Promise(function(r,o){const i=f.createScript(e);i.addEventListener("error",function(){o(Error("Error loading "+e+(t?" from "+t:"")))}),i.addEventListener("load",function(){document.head.removeChild(i),p===e?o(m):r(n.getRegister())}),document.head.appendChild(i)})},t&&(window.addEventListener("DOMContentLoaded",g),g()),e&&"function"==typeof importScripts&&(f.instantiate=function(e){const t=this;return new Promise(function(n,r){try{importScripts(e)}catch(e){r(e)}n(t.getRegister())})}),f.resolve=function(e,t){const n=i(e,t||r);if(!n){if(-1!==e.indexOf(":"))return Promise.resolve(e);throw Error('Cannot resolve "'+e+(t?'" from '+t:'"'))}return Promise.resolve(n)}}();</script>
-<script>System.import('https://static.observablehq.com/index-56d44496.js')</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/observablehq.com\/@d3\/zoomable-sunburst"},"headline":"Zoomable Sunburst","image":["https:\/\/static.observableusercontent.com\/thumbnail\/6d2e1f16d415ac13f13740b6155fdcfb8d3836e5b2332277de1e26742ffbcb0c.jpg"],"datePublished":"2018-04-30T17:36:45.704Z","dateModified":"2019-10-29T22:29:23.969Z","author":{"@type":"Person","name":"D3"},"publisher":{"@type":"Organization","name":"Observable","logo":{"@type":"ImageObject","url":"https:\/\/static.observablehq.com\/favicon-512.e85350a27dfadeea7c7c78c797c24419525df5579de174d86d258c40ae57473a.png"}}}
-</script>
-
+<body>
+    <svg></svg>
 </body>
-</html>
+
+<script>
+    // JSON data
+    var nodeData = {
+        "name": "TOPICS", "children": [{
+            "name": "Topic A",
+            "children": [{"name": "Sub A1", "size": 4}, {"name": "Sub A2", "size": 4}]
+        }, {
+            "name": "Topic B",
+            "children": [{"name": "Sub B1", "size": 3}, {"name": "Sub B2", "size": 3}, {
+                "name": "Sub B3", "size": 3}]
+        }, {
+            "name": "Topic C",
+            "children": [{"name": "Sub A1", "size": 4}, {"name": "Sub A2", "size": 4}]
+        }]
+    };
+
+    // Variables
+    var width = 500;
+    var height = 500;
+    var radius = Math.min(width, height) / 2;
+    var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+    // Create primary <g> element
+    var g = d3.select('svg')
+        .attr('width', width)
+        .attr('height', height)
+        .append('g')
+        .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+    // Data strucure
+    var partition = d3.partition()
+        .size([2 * Math.PI, radius]);
+
+    // Find data root
+    var root = d3.hierarchy(nodeData)
+        .sum(function (d) { return d.size});
+
+    // Size arcs
+    partition(root);
+    var arc = d3.arc()
+        .startAngle(function (d) { return d.x0 })
+        .endAngle(function (d) { return d.x1 })
+        .innerRadius(function (d) { return d.y0 })
+        .outerRadius(function (d) { return d.y1 });
+
+    // Put it all together
+    g.selectAll('path')
+        .data(root.descendants())
+        .enter().append('path')
+        .attr("display", function (d) { return d.depth ? null : "none"; })
+        .attr("d", arc)
+        .style('stroke', '#fff')
+        .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); });
+</script>
